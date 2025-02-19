@@ -6,7 +6,13 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "usdtTokenAddress",
+						"type": "address"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -14,6 +20,39 @@
 				"inputs": [],
 				"name": "CarbonTrader__NotOwner",
 				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CarbonTrader__ParamError",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CarbonTrader__TransferFailed",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "tradeId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "info",
+						"type": "string"
+					}
+				],
+				"name": "deposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			},
 			{
 				"inputs": [
@@ -42,6 +81,29 @@
 					}
 				],
 				"name": "destoryAllowance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "tradeId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "allowanceAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "addtionalAmountToPay",
+						"type": "uint256"
+					}
+				],
+				"name": "finalizeAuctionAndTransferCarbon",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -86,6 +148,25 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "tradeId",
+						"type": "string"
+					}
+				],
+				"name": "getBidInfo",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "uesr",
 						"type": "address"
@@ -93,6 +174,50 @@
 				],
 				"name": "getFrozenAllowance",
 				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "tradeId",
+						"type": "string"
+					}
+				],
+				"name": "getTrade",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
 					{
 						"internalType": "uint256",
 						"name": "",
@@ -123,6 +248,93 @@
 			{
 				"inputs": [
 					{
+						"internalType": "string",
+						"name": "tradeId",
+						"type": "string"
+					}
+				],
+				"name": "refundDeposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "tradeId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "info",
+						"type": "string"
+					}
+				],
+				"name": "setBidInfo",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "tradeId",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "secret",
+						"type": "string"
+					}
+				],
+				"name": "setBidSecret",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "tradeId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startTimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endTimestamp",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minimumBidAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "initPriceOfUnit",
+						"type": "uint256"
+					}
+				],
+				"name": "startTrade",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "uesr",
 						"type": "address"
@@ -134,6 +346,13 @@
 					}
 				],
 				"name": "unFreezeAllowance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdrawAcutionAmount",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -150,11 +369,17 @@
 				"constructor": {
 					"notice": "合约部署时调用，将部署者设置为主人"
 				},
+				"deposit(string,uint256,string)": {
+					"notice": "支付押金"
+				},
 				"destoryAllAllowance(address)": {
 					"notice": "销毁所有额度"
 				},
 				"destoryAllowance(address,uint256)": {
 					"notice": "销毁某些人的额度"
+				},
+				"finalizeAuctionAndTransferCarbon(string,uint256,uint256)": {
+					"notice": "结算"
 				},
 				"freezeAllowance(address,uint256)": {
 					"notice": "冻结额度"
@@ -162,14 +387,35 @@
 				"getAllowance(address)": {
 					"notice": "查看自己的额度"
 				},
+				"getBidInfo(string)": {
+					"notice": "获取用户的交易信息"
+				},
 				"getFrozenAllowance(address)": {
 					"notice": "查询冻结额度"
+				},
+				"getTrade(string)": {
+					"notice": "获得交易信息"
 				},
 				"issueAllowance(address,uint256)": {
 					"notice": "发放额度，用于给每个用户发放额度"
 				},
+				"refundDeposit(string)": {
+					"notice": "押金退还"
+				},
+				"setBidInfo(string,string)": {
+					"notice": "设置交易信息"
+				},
+				"setBidSecret(string,string)": {
+					"notice": "设置用户密钥"
+				},
+				"startTrade(string,uint256,uint256,uint256,uint256,uint256)": {
+					"notice": "发起交易"
+				},
 				"unFreezeAllowance(address,uint256)": {
 					"notice": "解冻额度"
+				},
+				"withdrawAcutionAmount()": {
+					"notice": "卖家提现"
 				}
 			},
 			"notice": "余额管理",
@@ -192,12 +438,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"CarbonTrader.sol": {
-			"keccak256": "0xcefabee189857d3e7a97736dbb47fb8f86ce45d6308fdfaa2cc9fd92c67baa0a",
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xe06a3f08a987af6ad2e1c1e774405d4fe08f1694b67517438b467cecf0da0ef7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3c49de71277d1b128f9b128c7ef2103973d74a48b8c45cc17028dc9a82f2e9e7",
-				"dweb:/ipfs/QmdXh5EyrWAwWC5Dm2xY9HwHZ83221hfpqQoNX9Cesqq5f"
+				"bzz-raw://df6f0c459663c9858b6cba2cda1d14a7d05a985bed6d2de72bd8e78c25ee79db",
+				"dweb:/ipfs/QmeTTxZ7qVk9rjEv2R4CpCwdf8UMCcRqDNMvzNxHc3Fnn9"
+			]
+		},
+		"CarbonTrader.sol": {
+			"keccak256": "0x1ec87c41b51fe03117f0c9b360bcadc0e414d288e840d0b0e5c0c37cb89237d9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d43c2af25fbcb7c32c03a701e003f57bd702acec7b6b694dd4017b6aa5ca3bd9",
+				"dweb:/ipfs/QmdPn5U7oKvMHbBVf5qPHvHvK3y4NUt1GVtXNL2T1j8n3j"
 			]
 		}
 	},
