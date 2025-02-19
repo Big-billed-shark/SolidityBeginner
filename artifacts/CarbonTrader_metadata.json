@@ -1,0 +1,205 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "CarbonTrader__NotOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "uesr",
+						"type": "address"
+					}
+				],
+				"name": "destoryAllAllowance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "uesr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "destoryAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "destoryAllowance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "uesr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "freezedAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "freezeAllowance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "uesr",
+						"type": "address"
+					}
+				],
+				"name": "getAllowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "uesr",
+						"type": "address"
+					}
+				],
+				"name": "getFrozenAllowance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "uesr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "issueAllowance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "uesr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "unFreezedAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "unFreezeAllowance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"constructor": {
+					"notice": "合约部署时调用，将部署者设置为主人"
+				},
+				"destoryAllAllowance(address)": {
+					"notice": "销毁所有额度"
+				},
+				"destoryAllowance(address,uint256)": {
+					"notice": "销毁某些人的额度"
+				},
+				"freezeAllowance(address,uint256)": {
+					"notice": "冻结额度"
+				},
+				"getAllowance(address)": {
+					"notice": "查看自己的额度"
+				},
+				"getFrozenAllowance(address)": {
+					"notice": "查询冻结额度"
+				},
+				"issueAllowance(address,uint256)": {
+					"notice": "发放额度，用于给每个用户发放额度"
+				},
+				"unFreezeAllowance(address,uint256)": {
+					"notice": "解冻额度"
+				}
+			},
+			"notice": "余额管理",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"CarbonTrader.sol": "CarbonTrader"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"CarbonTrader.sol": {
+			"keccak256": "0xcefabee189857d3e7a97736dbb47fb8f86ce45d6308fdfaa2cc9fd92c67baa0a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3c49de71277d1b128f9b128c7ef2103973d74a48b8c45cc17028dc9a82f2e9e7",
+				"dweb:/ipfs/QmdXh5EyrWAwWC5Dm2xY9HwHZ83221hfpqQoNX9Cesqq5f"
+			]
+		}
+	},
+	"version": 1
+}
